@@ -26,13 +26,9 @@ You can generated output files inside `output` directory as specified in `#SBATC
 
 ---
 
-## Example 2: Iris_Dataset_Analysis
+## Example 2: Iris data analysis
 
-This project demonstrates advanced data analysis of the iris dataset using **Python**. We will be doing classification by supervised machine learning algorithm - Logistic Regression and unsupervised machine learning algorithm - Kmeans Clustering.
-
-### Problem Statement
-
-This dataset consists of the physical parameters of three species of flower - Versicolor, Setosa, Virginica. The numeric parameters which the dataset contains are Sepal width, Sepal Length, Petal width and Petal length. In this data we will be predicting the classes of the flowers based on these parameters.
+This project demonstrates data analysis of the iris dataset using **Python**. We will be doing classification by supervised machine learning algorithm - Logistic Regression and unsupervised machine learning algorithm - Kmeans Clustering. This dataset consists of the physical parameters of three species of flower - Versicolor, Setosa, Virginica. The numeric parameters which the dataset contains are Sepal width, Sepal Length, Petal width and Petal length. In this data we will be predicting the classes of the flowers based on these parameters.
 
 ---
 
@@ -58,7 +54,7 @@ conda activate irisenv
 pip install -r requirements.txt
 ```
 
-### Advanced Data Analysis
+### Data Analysis
 
 In this data exploration, we retrieved crucial information such as skewness, correlation and even feature importances by XGBClassifier to help us made informed choices. In the end, we decided to keep only PetalLengthCm for our prediction.
 
@@ -72,7 +68,7 @@ python3 -m source.analysis
 
 ### Prediction (Supervised)
 
-As mentioned above, we will be using **Logistic Regression** for the demonstration of classifying the iris dataset. We will also be using some common machine learning metrics that will help us gauge the performance of our model. In the end, we achieved a model accuracy of 96.67% in 0.0497s runtime with only PetalLengthCm and PetalWidthCm. Using cross-validation, we also noted that our mean accuracy is 95.83% (4.17% standard deviation).
+As mentioned above, we will be using **Logistic Regression** for the demonstration of classifying the iris dataset. We will also be using some common machine learning metrics that will help us gauge the performance of our model.
 
 #### To Run Prediction
 
@@ -84,7 +80,7 @@ python3 -m source.predict_supervised
 
 ### Prediction (Unsupervised)
 
-As mentioned above, we will be using **Kmeans Clustering** for the demonstration of classifying the iris dataset. We will also be using some common machine learning metrics that will help us gauge the performance of our model. In the end, we achieved a model accuracy of 96.67% in 0.117s runtime with only PetalLengthCm and PetalWidthCm. Note here that cross-validation is not suitable for this application.
+As mentioned above, we will be using **Kmeans Clustering** for the demonstration of classifying the iris dataset. We will also be using some common machine learning metrics that will help us gauge the performance of our model.
 
 #### To Run Prediction
 
