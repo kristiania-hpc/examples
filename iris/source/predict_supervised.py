@@ -44,6 +44,16 @@ def logistic_regression(X_train, X_test, Y_train, Y_test):
     return confusion_mat
 
 
+def plot_confusion_matrix(confusion_mat):
+    """ Plot the confusion matrix """
+    plt.figure(figsize=(10, 7))
+    sns.heatmap(confusion_mat, annot=True, fmt='d', cmap='Blues')
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    plt.title('Confusion Matrix')
+    plt.savefig('figure/confusion_matrix.png')
+
+
 if __name__ == '__main__':
 
     start_time = time.time()
@@ -80,6 +90,10 @@ if __name__ == '__main__':
     # predict
     confusion_mat = logistic_regression(X_train, X_test, Y_train, Y_test)
 
+    # Create the directory if it does not exist
+    Path("figure").mkdir(parents=True, exist_ok=True)
+    plot_confusion_matrix(confusion_mat)
+
     end_time = time.time()
     # execution run time
     runtime = round(end_time - start_time, 6)
@@ -88,14 +102,3 @@ if __name__ == '__main__':
     print("End Time:", time.strftime(
         "%Y-%m-%d %H:%M:%S", time.localtime(end_time)))
     print('='*30)
-
-    # Create the directory if it does not exist
-    Path("figure").mkdir(parents=True, exist_ok=True)
-
-    # Plot the confusion matrix
-    plt.figure(figsize=(10, 7))
-    sns.heatmap(confusion_mat, annot=True, fmt='d', cmap='Blues')
-    plt.xlabel('Predicted')
-    plt.ylabel('Actual')
-    plt.title('Confusion Matrix')
-    plt.savefig('figure/confusion_matrix.png')
