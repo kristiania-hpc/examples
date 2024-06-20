@@ -1,4 +1,4 @@
-# Examples projects for HPC experimentation
+# Example projects for HPC experimentation
 
 ---
 
