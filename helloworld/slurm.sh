@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=test
-#SBATCH --partition=LocalQ
+#SBATCH --partition=CPUQ
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCh --cpus-per-task=1
@@ -9,8 +9,5 @@
 #SBATCH --error=output/slurm%j.err
 
 echo "Hello world"
-
-python --version
-which python
 
 python3 test.py

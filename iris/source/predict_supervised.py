@@ -2,8 +2,8 @@ import time
 import os
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 from pathlib import Path
 
 from sklearn import metrics
@@ -44,14 +44,14 @@ def logistic_regression(X_train, X_test, Y_train, Y_test):
     return confusion_mat
 
 
-def plot_confusion_matrix(confusion_mat):
-    """ Plot the confusion matrix """
-    plt.figure(figsize=(10, 7))
-    sns.heatmap(confusion_mat, annot=True, fmt='d', cmap='Blues')
-    plt.xlabel('Predicted')
-    plt.ylabel('Actual')
-    plt.title('Confusion Matrix')
-    plt.savefig('figure/confusion_matrix.png')
+# def plot_confusion_matrix(confusion_mat):
+#     """ Plot the confusion matrix """
+#     plt.figure(figsize=(10, 7))
+#     sns.heatmap(confusion_mat, annot=True, fmt='d', cmap='Blues')
+#     plt.xlabel('Predicted')
+#     plt.ylabel('Actual')
+#     plt.title('Confusion Matrix')
+#     plt.savefig('figure/confusion_matrix.png')
 
 
 if __name__ == '__main__':
@@ -92,7 +92,7 @@ if __name__ == '__main__':
 
     # Create the directory if it does not exist
     Path("figure").mkdir(parents=True, exist_ok=True)
-    plot_confusion_matrix(confusion_mat)
+    # plot_confusion_matrix(confusion_mat)
 
     end_time = time.time()
     # execution run time
