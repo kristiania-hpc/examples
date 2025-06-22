@@ -1,28 +1,30 @@
 # Example projects for HPC experimentation
 
----
+This repository provides several practical examples for running data analysis and machine learning jobs on our Kristiania-HPC cluster using SLURM.
 
 ## Example 1: Hello World
 
-#### Create A Conda Virtual Environment
+A minimal example to test your SLURM job submission setup. Create and activate conda environment if you want [optional] before submitting slurm job. 
+
+#### Create a conda virtual environment
 
 ```code
 conda create -n testenv python==3.10
 ```
 
-#### Activate The Conda Virtual Environment
+#### Activate the conda virtual environment
 
 ```code
 conda activate testenv
 ```
 
-#### To submit the job `slurm.sh` to the HPC
+#### To submit the job `slurm.sh` to the HPC (`helloworld/slurm.sh`)
 
 ```code
 sbatch slurm.sh
 ```
 
-You can generated output files inside `output` directory as specified in `#SBATCH --output=output/slurm%j.out`
+You will get a generated output file inside `output` directory as specified in `#SBATCH --output=output/slurm%j.out`
 
 ---
 
@@ -32,58 +34,47 @@ This project demonstrates data analysis of the iris dataset using **Python**. We
 
 ---
 
-### Environment Setup
+### Environment setup
 
 As a good practice for any python projects, we will create a virtual environment to exercise full control via a stable, reproducible, and portable environment.
 
-#### Create A Conda Virtual Environment
+#### Create a conda virtual environment
 
 ```code
 conda create -n irisenv python==3.10
 ```
 
-#### Activate The Conda Virtual Environment
+#### Activate the conda virtual environment
 
 ```code
 conda activate irisenv
 ```
 
-#### Install Required Libraries
+#### Install required libraries
 
 ```code
 pip install -r requirements.txt
 ```
 
-### Data Analysis
 
-In this data exploration, we retrieved crucial information such as skewness, correlation and even feature importances by XGBClassifier to help us made informed choices. In the end, we decided to keep only PetalLengthCm for our prediction.
+#### Job submission
 
-#### To Run Analysis
+Submit a SLURM job script to run it in `CPUQ` partition: 
 
 ```code
-python3 -m source.analysis
+sbatch slurm.sh
 ```
 
----
-
-### Prediction (Supervised)
-
-As mentioned above, we will be using **Logistic Regression** for the demonstration of classifying the iris dataset. We will also be using some common machine learning metrics that will help us gauge the performance of our model.
-
-#### To Run Prediction
+Inside the script (slurm.sh), you can specify the Python module or script to execute, such as:
 
 ```code
 python3 -m source.predict_supervised
 ```
 
----
-
-### Prediction (Unsupervised)
-
-As mentioned above, we will be using **Kmeans Clustering** for the demonstration of classifying the iris dataset. We will also be using some common machine learning metrics that will help us gauge the performance of our model.
-
-#### To Run Prediction
+If your workload requires GPU resources, submit the job to the `HGXQ` partition using:
 
 ```code
-python3 -m source.predict_unsupervised
+sbatch slurm-gpu.sh
 ```
+
+Be sure that slurm-gpu.sh includes appropriate directives for GPU access (e.g., `#SBATCH --partition=HGXQ` and `#SBATCH --gres=gpu:1`).
