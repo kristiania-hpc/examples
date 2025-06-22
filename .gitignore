@@ -1,3 +1,8 @@
+# project specifi
+helloworld/output
+iris/output/
+iris/figure/
+iris/test.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

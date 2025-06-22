@@ -8,6 +8,7 @@
 #SBATCH --output=output/slurm%j.out
 #SBATCH --error=output/slurm%j.err
 
+source /cluster/storage/anaconda3/etc/profile.d/conda.sh
 which conda
 conda --version
 conda activate iris
