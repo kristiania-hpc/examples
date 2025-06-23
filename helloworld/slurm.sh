@@ -8,12 +8,4 @@
 #SBATCH --output=output/slurm%j.out
 #SBATCH --error=output/slurm%j.err
 
-echo "Hello world"
-source /cluster/storage/anaconda3/etc/profile.d/conda.sh
-which conda 
-conda --version
-conda activate iris
-python3 --version
-which python3
-
 python3 test.py
