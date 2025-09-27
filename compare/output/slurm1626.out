@@ -1,0 +1,5 @@
+Python 3.12.9
+/cluster/storage/anaconda3/envs/hpc/bin/python
+Performing matrix multiplication on CPU and GPU...
+CPU time: 17.48 seconds
+GPU time: 0.09 seconds

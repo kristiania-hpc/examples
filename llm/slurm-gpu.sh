@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=irisGPU                    # Job name
+#SBATCH --job-name=distilgpt2                    # Job name
 #SBATCH --partition=HGXQ                     # GPU partition
 #SBATCH --gres=gpu:1                         # Request 1 GPU
 #SBATCH --nodes=1                            # Number of nodes
@@ -11,11 +11,8 @@
 #SBATCH --error=output/slurm%j.err          # Error file
 
 source /cluster/storage/anaconda3/etc/profile.d/conda.sh
-# which conda
+which conda
 conda --version
-conda activate iris
+conda activate hpc
 
-python --version
-which python
-
-python3 -m source.dnn-torch
+python3 cpu
