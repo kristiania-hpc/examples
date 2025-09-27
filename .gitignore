@@ -5,6 +5,8 @@ llm/output
 compare/output
 iris/figure/
 iris/test.py
+llm/distilgpt2-finetuned
+llm/results
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

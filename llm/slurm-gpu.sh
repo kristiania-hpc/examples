@@ -10,9 +10,11 @@
 #SBATCH --output=output/slurm%j.out         # Output file (%j = job ID) in output dir
 #SBATCH --error=output/slurm%j.err          # Error file
 
-source /cluster/storage/anaconda3/etc/profile.d/conda.sh
-which conda
-conda --version
-conda activate hpc
+source venv/bin/activate
+which python3
 
-python3 cpu
+# run inference
+# python3 inference-distilgpt2.py
+
+# run fine-tuning
+python3 fine-tune.py
