@@ -4,7 +4,7 @@ import cupy as cp
 import time
 
 # Matrix size
-N = 1000
+N = 10000
 
 print("Performing matrix multiplication on CPU and GPU...")
 # ----- CPU (NumPy) -----
