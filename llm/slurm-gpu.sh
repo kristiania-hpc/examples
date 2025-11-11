@@ -14,7 +14,7 @@ source venv/bin/activate
 which python3
 
 # run inference
-# python3 inference-distilgpt2.py
+python3 inference-distilgpt2.py
 
 # run fine-tuning
-python3 fine-tune.py
+# python3 fine-tune.py

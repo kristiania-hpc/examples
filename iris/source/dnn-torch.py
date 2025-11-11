@@ -31,9 +31,9 @@ y_test  = torch.tensor(y_test, dtype=torch.long).to(device)
 # Simple Model
 # ===============================
 model = nn.Sequential(
-    nn.Linear(4, 16),
+    nn.Linear(4, 16),  # 4 sepal and petal features - length and width in cm
     nn.ReLU(),
-    nn.Linear(16, 3)
+    nn.Linear(16, 3) # 3 classes of iris
 ).to(device)
 
 criterion = nn.CrossEntropyLoss()
@@ -44,7 +44,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.01)
 # ===============================
 start_time = time.time()  # Start timer
 
-for epoch in range(50):
+for epoch in range(10):
     optimizer.zero_grad()
     outputs = model(X_train)
     loss = criterion(outputs, y_train)
