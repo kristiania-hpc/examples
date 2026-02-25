@@ -10,9 +10,7 @@
 #SBATCH --output=output/slurm%j.out         # Output file (%j = job ID) in output dir
 #SBATCH --error=output/slurm%j.err          # Error file
 
-# source /cluster/apps/conda/etc/profile.d/conda.sh
-# which conda
-conda --version
+source /cluster/apps/conda/etc/profile.d/conda.sh
 conda activate iris
 
 python --version
