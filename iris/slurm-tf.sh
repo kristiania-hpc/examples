@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=distilgpt2                    # Job name
+#SBATCH --job-name=irisGPU                    # Job name
 #SBATCH --partition=HGXQ                     # GPU partition
 #SBATCH --gres=gpu:1                         # Request 1 GPU
 #SBATCH --nodes=1                            # Number of nodes
@@ -10,11 +10,14 @@
 #SBATCH --output=output/slurm%j.out         # Output file (%j = job ID) in output dir
 #SBATCH --error=output/slurm%j.err          # Error file
 
-source venv/bin/activate
-which python3
+module purge 
+module load CUDA/12.2.0 
 
-# run inference
-# python3 inference-distilgpt2.py
+source /cluster/apps/conda/etc/profile.d/conda.sh
+conda --version
+conda activate iris
 
-# run fine-tuning
-python3 fine-tune.py
+python --version
+which python
+
+python3 -m source.dnn-tf
